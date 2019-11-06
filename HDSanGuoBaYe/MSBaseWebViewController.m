@@ -49,9 +49,9 @@
             return YES;
         }
         if ([request.URL.absoluteString isEqualToString:@"https://bgwp.oschina.io/baye/index.html"]) {
-            if (self.weakVC) {
-                [self.weakVC showPenroseView];
-            }
+//            if (self.weakVC) {
+//                [self.weakVC showPenroseView];
+//            }
         }
         return NO;
     };

@@ -8,13 +8,16 @@
 
 #import "RootViewController.h"
 
-#import "MSBaseWebViewController.h"
+#import "HDWKWebViewViewController.h"
+#import "HDWKWebViewViewController.h"
+
+#import <HDBaseProject/HDBaseProject.h>
 
 @interface RootViewController ()
 
-@property (nonatomic, strong) MSBaseWebViewController  *boxesCloudVC;
-@property (nonatomic, strong) MSBaseWebViewController  *findSomeVC;
-@property (nonatomic, strong) MSBaseWebViewController  *settingVC;
+@property (nonatomic, strong) HDWKWebViewViewController  *boxesCloudVC;
+@property (nonatomic, strong) HDWKWebViewViewController  *findSomeVC;
+@property (nonatomic, strong) HDWKWebViewViewController  *settingVC;
 
 @end
 
@@ -40,34 +43,34 @@
 
 
 #pragma mark - 成员变量延迟实例化
-- (MSBaseWebViewController *)boxesCloudVC{
+- (HDWKWebViewViewController *)boxesCloudVC{
     if (!_boxesCloudVC) {
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-乱战三国" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _boxesCloudVC = [[MSBaseWebViewController alloc] initWithURLString:url];
+        _boxesCloudVC = [[HDWKWebViewViewController alloc] initWithURLString:url];
         _boxesCloudVC.weakVC = self;
     }
     return _boxesCloudVC;
 }
 
-- (MSBaseWebViewController *)findSomeVC{
+- (HDWKWebViewViewController *)findSomeVC{
     if (!_findSomeVC) {
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-血色华夏" hd_utf8Encode];
-        NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.2f", name, now];
-        _findSomeVC = [[MSBaseWebViewController alloc] initWithURLString:url];
+        NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
+        _findSomeVC = [[HDWKWebViewViewController alloc] initWithURLString:url];
         _findSomeVC.weakVC = self;
     }
     return _findSomeVC;
 }
 
-- (MSBaseWebViewController *)settingVC{
+- (HDWKWebViewViewController *)settingVC{
     if (!_settingVC) {
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-三国杀" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _settingVC = [[MSBaseWebViewController alloc] initWithURLString:url];
+        _settingVC = [[HDWKWebViewViewController alloc] initWithURLString:url];
         _settingVC.weakVC = self;
     }
     return _settingVC;

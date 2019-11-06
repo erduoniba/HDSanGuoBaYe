@@ -22,9 +22,9 @@
     if (!_window) {
         _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _window.backgroundColor = [UIColor whiteColor];
-        if (@available(iOS 13.0, *)) {
-            _window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
-        }
+//        if (@available(iOS 13.0, *)) {
+//            _window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+//        }
     }
     return _window;
 }

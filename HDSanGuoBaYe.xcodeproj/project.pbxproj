@@ -17,6 +17,7 @@
 		ADBE9F1A2372C34D0010C60F /* UIViewController+RSPenrose.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */; };
 		ADBE9F1D2372C3690010C60F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F1C2372C3690010C60F /* RootViewController.m */; };
 		C83951F25F07AFBDA83E3138 /* Pods_HDSanGuoBaYe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CA2283FB9746C422A06F7 /* Pods_HDSanGuoBaYe.framework */; };
+		D924C8472373122600015213 /* HDWKWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D924C8462373122600015213 /* HDWKWebViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RSPenrose.m"; sourceTree = "<group>"; };
 		ADBE9F1B2372C3690010C60F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		ADBE9F1C2372C3690010C60F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		D924C8452373122600015213 /* HDWKWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDWKWebViewViewController.h; sourceTree = "<group>"; };
+		D924C8462373122600015213 /* HDWKWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDWKWebViewViewController.m; sourceTree = "<group>"; };
 		F30435BCB24D608C539D76D5 /* Pods-HDSanGuoBaYe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDSanGuoBaYe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe.release.xcconfig"; sourceTree = "<group>"; };
 		F67228254C9F36C3F872AE0A /* Pods-HDSanGuoBaYe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDSanGuoBaYe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,13 +90,14 @@
 				AD2173C02371451900848867 /* AppDelegate.m */,
 				ADBE9F1B2372C3690010C60F /* RootViewController.h */,
 				ADBE9F1C2372C3690010C60F /* RootViewController.m */,
+				D924C8452373122600015213 /* HDWKWebViewViewController.h */,
+				D924C8462373122600015213 /* HDWKWebViewViewController.m */,
 				ADBE9F0D2372B7D10010C60F /* MSBaseWebViewController.h */,
 				ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */,
 				AD2173C82371451A00848867 /* Assets.xcassets */,
 				AD2173CA2371451A00848867 /* LaunchScreen.storyboard */,
 				AD2173CD2371451A00848867 /* Info.plist */,
 				AD2173CE2371451A00848867 /* main.m */,
-				ADBE9F242372F29B0010C60F /* HDResources */,
 				ADBE9F102372C3330010C60F /* ThirdPartyLibs */,
 			);
 			path = HDSanGuoBaYe;
@@ -118,13 +122,6 @@
 				ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */,
 			);
 			path = RSPenrose;
-			sourceTree = "<group>";
-		};
-		ADBE9F242372F29B0010C60F /* HDResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HDResources;
 			sourceTree = "<group>";
 		};
 		E0A22F64090DB1D3C8E6F7E3 /* Pods */ = {
@@ -208,8 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
@@ -220,8 +215,6 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
@@ -240,15 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-HDSanGuoBaYe-checkManifestLockResult.txt",
 			);
@@ -268,6 +257,7 @@
 				ADBE9F1D2372C3690010C60F /* RootViewController.m in Sources */,
 				ADBE9F0F2372B7D10010C60F /* MSBaseWebViewController.m in Sources */,
 				ADBE9F1A2372C34D0010C60F /* UIViewController+RSPenrose.m in Sources */,
+				D924C8472373122600015213 /* HDWKWebViewViewController.m in Sources */,
 				AD2173CF2371451A00848867 /* main.m in Sources */,
 				ADBE9F182372C34D0010C60F /* RSPenroseView.m in Sources */,
 				AD2173C12371451900848867 /* AppDelegate.m in Sources */,
@@ -339,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -392,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
