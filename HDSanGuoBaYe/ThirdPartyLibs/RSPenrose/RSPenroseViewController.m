@@ -77,8 +77,9 @@
     
     //Init the penrose view
     CGFloat height = 280;
-    self.penroseView = [[RSPenroseView alloc] initWithFrame:CGRectMake(0, -80 + [UIDevice hd_statusHeight], 320, height)];
-    self.penroseViewContainer = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth - 320) / 2, originYOut, 320, height)];
+    CGFloat width = 200;
+    self.penroseView = [[RSPenroseView alloc] initWithFrame:CGRectMake((width - 320)/2, -80 + [UIDevice hd_statusHeight], 320, height)];
+    self.penroseViewContainer = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth - width) / 2, originYOut, width, height)];
     basePenroseRect = self.penroseViewContainer.frame;
     [self.view addSubview:self.penroseViewContainer];
     [self.penroseViewContainer addSubview:self.penroseView];
