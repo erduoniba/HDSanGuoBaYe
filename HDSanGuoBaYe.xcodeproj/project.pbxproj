@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		AD2173C12371451900848867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2173C02371451900848867 /* AppDelegate.m */; };
-		AD2173C42371451900848867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2173C32371451900848867 /* ViewController.m */; };
-		AD2173C72371451900848867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2173C52371451900848867 /* Main.storyboard */; };
 		AD2173C92371451A00848867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2173C82371451A00848867 /* Assets.xcassets */; };
 		AD2173CC2371451A00848867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2173CA2371451A00848867 /* LaunchScreen.storyboard */; };
 		AD2173CF2371451A00848867 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2173CE2371451A00848867 /* main.m */; };
+		ADBE9F0F2372B7D10010C60F /* MSBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */; };
+		ADBE9F182372C34D0010C60F /* RSPenroseView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F132372C34D0010C60F /* RSPenroseView.m */; };
+		ADBE9F192372C34D0010C60F /* RSPenroseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F152372C34D0010C60F /* RSPenroseViewController.m */; };
+		ADBE9F1A2372C34D0010C60F /* UIViewController+RSPenrose.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */; };
+		ADBE9F1D2372C3690010C60F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F1C2372C3690010C60F /* RootViewController.m */; };
+		C83951F25F07AFBDA83E3138 /* Pods_HDSanGuoBaYe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CA2283FB9746C422A06F7 /* Pods_HDSanGuoBaYe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E3CA2283FB9746C422A06F7 /* Pods_HDSanGuoBaYe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDSanGuoBaYe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2173BC2371451900848867 /* HDSanGuoBaYe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDSanGuoBaYe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2173BF2371451900848867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AD2173C02371451900848867 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AD2173C22371451900848867 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AD2173C32371451900848867 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AD2173C62371451900848867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD2173C82371451A00848867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD2173CB2371451A00848867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD2173CD2371451A00848867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2173CE2371451A00848867 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADBE9F0D2372B7D10010C60F /* MSBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseWebViewController.h; sourceTree = "<group>"; };
+		ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseWebViewController.m; sourceTree = "<group>"; };
+		ADBE9F122372C34D0010C60F /* UIViewController+RSPenrose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RSPenrose.h"; sourceTree = "<group>"; };
+		ADBE9F132372C34D0010C60F /* RSPenroseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPenroseView.m; sourceTree = "<group>"; };
+		ADBE9F142372C34D0010C60F /* RSPenroseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPenroseViewController.h; sourceTree = "<group>"; };
+		ADBE9F152372C34D0010C60F /* RSPenroseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPenroseViewController.m; sourceTree = "<group>"; };
+		ADBE9F162372C34D0010C60F /* RSPenroseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPenroseView.h; sourceTree = "<group>"; };
+		ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RSPenrose.m"; sourceTree = "<group>"; };
+		ADBE9F1B2372C3690010C60F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		ADBE9F1C2372C3690010C60F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F30435BCB24D608C539D76D5 /* Pods-HDSanGuoBaYe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDSanGuoBaYe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe.release.xcconfig"; sourceTree = "<group>"; };
+		F67228254C9F36C3F872AE0A /* Pods-HDSanGuoBaYe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDSanGuoBaYe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83951F25F07AFBDA83E3138 /* Pods_HDSanGuoBaYe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AF8E67983141B460B48B94A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E3CA2283FB9746C422A06F7 /* Pods_HDSanGuoBaYe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AD2173B32371451900848867 = {
 			isa = PBXGroup;
 			children = (
 				AD2173BE2371451900848867 /* HDSanGuoBaYe */,
 				AD2173BD2371451900848867 /* Products */,
+				E0A22F64090DB1D3C8E6F7E3 /* Pods */,
+				6AF8E67983141B460B48B94A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,15 +85,55 @@
 			children = (
 				AD2173BF2371451900848867 /* AppDelegate.h */,
 				AD2173C02371451900848867 /* AppDelegate.m */,
-				AD2173C22371451900848867 /* ViewController.h */,
-				AD2173C32371451900848867 /* ViewController.m */,
-				AD2173C52371451900848867 /* Main.storyboard */,
+				ADBE9F1B2372C3690010C60F /* RootViewController.h */,
+				ADBE9F1C2372C3690010C60F /* RootViewController.m */,
+				ADBE9F0D2372B7D10010C60F /* MSBaseWebViewController.h */,
+				ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */,
 				AD2173C82371451A00848867 /* Assets.xcassets */,
 				AD2173CA2371451A00848867 /* LaunchScreen.storyboard */,
 				AD2173CD2371451A00848867 /* Info.plist */,
 				AD2173CE2371451A00848867 /* main.m */,
+				ADBE9F242372F29B0010C60F /* HDResources */,
+				ADBE9F102372C3330010C60F /* ThirdPartyLibs */,
 			);
 			path = HDSanGuoBaYe;
+			sourceTree = "<group>";
+		};
+		ADBE9F102372C3330010C60F /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				ADBE9F112372C34D0010C60F /* RSPenrose */,
+			);
+			path = ThirdPartyLibs;
+			sourceTree = "<group>";
+		};
+		ADBE9F112372C34D0010C60F /* RSPenrose */ = {
+			isa = PBXGroup;
+			children = (
+				ADBE9F162372C34D0010C60F /* RSPenroseView.h */,
+				ADBE9F132372C34D0010C60F /* RSPenroseView.m */,
+				ADBE9F142372C34D0010C60F /* RSPenroseViewController.h */,
+				ADBE9F152372C34D0010C60F /* RSPenroseViewController.m */,
+				ADBE9F122372C34D0010C60F /* UIViewController+RSPenrose.h */,
+				ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */,
+			);
+			path = RSPenrose;
+			sourceTree = "<group>";
+		};
+		ADBE9F242372F29B0010C60F /* HDResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HDResources;
+			sourceTree = "<group>";
+		};
+		E0A22F64090DB1D3C8E6F7E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F67228254C9F36C3F872AE0A /* Pods-HDSanGuoBaYe.debug.xcconfig */,
+				F30435BCB24D608C539D76D5 /* Pods-HDSanGuoBaYe.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD2173D22371451A00848867 /* Build configuration list for PBXNativeTarget "HDSanGuoBaYe" */;
 			buildPhases = (
+				AB36DE5205AE35FDB260D9EA /* [CP] Check Pods Manifest.lock */,
 				AD2173B82371451900848867 /* Sources */,
 				AD2173B92371451900848867 /* Frameworks */,
 				AD2173BA2371451900848867 /* Resources */,
+				8CFAD176F6C59E6E0CE93B24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,19 +197,79 @@
 			files = (
 				AD2173CC2371451A00848867 /* LaunchScreen.storyboard in Resources */,
 				AD2173C92371451A00848867 /* Assets.xcassets in Resources */,
-				AD2173C72371451900848867 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CFAD176F6C59E6E0CE93B24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/HDBaseProject/HDBaseProject.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HDBaseProject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB36DE5205AE35FDB260D9EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HDSanGuoBaYe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD2173B82371451900848867 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD2173C42371451900848867 /* ViewController.m in Sources */,
+				ADBE9F192372C34D0010C60F /* RSPenroseViewController.m in Sources */,
+				ADBE9F1D2372C3690010C60F /* RootViewController.m in Sources */,
+				ADBE9F0F2372B7D10010C60F /* MSBaseWebViewController.m in Sources */,
+				ADBE9F1A2372C34D0010C60F /* UIViewController+RSPenrose.m in Sources */,
 				AD2173CF2371451A00848867 /* main.m in Sources */,
+				ADBE9F182372C34D0010C60F /* RSPenroseView.m in Sources */,
 				AD2173C12371451900848867 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,14 +277,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD2173C52371451900848867 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD2173C62371451900848867 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AD2173CA2371451A00848867 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -220,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -273,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,15 +402,17 @@
 		};
 		AD2173D32371451A00848867 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F67228254C9F36C3F872AE0A /* Pods-HDSanGuoBaYe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ353LFGTA;
 				INFOPLIST_FILE = HDSanGuoBaYe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye.HDSanGuoBaYe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,15 +420,17 @@
 		};
 		AD2173D42371451A00848867 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30435BCB24D608C539D76D5 /* Pods-HDSanGuoBaYe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ353LFGTA;
 				INFOPLIST_FILE = HDSanGuoBaYe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye.HDSanGuoBaYe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

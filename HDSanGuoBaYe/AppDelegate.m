@@ -8,15 +8,32 @@
 
 #import "AppDelegate.h"
 
+#import "RootViewController.h"
+#import "MSBaseWebViewController.h"
+#import <HDBaseProject/HDBaseProject.h>
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+- (UIWindow *)window {
+    if (!_window) {
+        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _window.backgroundColor = [UIColor whiteColor];
+        if (@available(iOS 13.0, *)) {
+            _window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+        }
+    }
+    return _window;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    RootViewController *baseWebVC = [[RootViewController alloc] init];
+    self.window.rootViewController = baseWebVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
