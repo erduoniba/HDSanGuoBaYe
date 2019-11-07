@@ -64,7 +64,7 @@
     [config.userContentController addScriptMessageHandler:self name:@"callFunciton"];
     
     //初始化
-    _wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
+    _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
     // UI代理
     _wkWebView.UIDelegate = self;
     // 导航代理
@@ -74,6 +74,7 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:_urlString]];
     [_wkWebView loadRequest:request];
+    _wkWebView.alpha = 0;
     [self.view addSubview:_wkWebView];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -108,10 +109,16 @@
     NSLog(@"didFinishNavigation : %@", webView.URL.absoluteString);
     
     NSString *urlStr = webView.URL.absoluteString;
+    NSString *gameHtml = @"https://bgwp.oschina.io/baye/m.html?name=";
     if ([urlStr isEqualToString:@"https://bgwp.oschina.io/baye/choose.html"] &&  _js.length > 0) {
         [_wkWebView evaluateJavaScript:_js completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
             
         }];
+    }
+    else if ([urlStr hasPrefix:gameHtml]) {
+        // 开始游戏，需要修正alpha
+        _wkWebView.alpha = 1;
+        [[SCCatWaitingHUD sharedInstance] stop];
     }
 }
 
@@ -172,10 +179,7 @@
          return;
      }
     else if ([urlStr hasPrefix:gameHtml]) {
-        // 开始游戏，需要修正frame
-        self.wkWebView.frame = self.view.bounds;
         decisionHandler(WKNavigationResponsePolicyAllow);
-        [[SCCatWaitingHUD sharedInstance] stop];
         return;
     }
     //允许跳转
