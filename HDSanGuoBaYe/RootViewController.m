@@ -49,7 +49,9 @@
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-乱战三国" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _boxesCloudVC = [[MSBaseWebViewController alloc] initWithURLString:url];
+        url = @"https://bgwp.oschina.io/baye/choose.html";
+        NSString *js = [NSString stringWithFormat:@"chooseLib('群魔乱舞-乱战三国', 'libs/qmlw-LZSG.lib', this)"];
+        _boxesCloudVC = [[HDWKWebViewViewController alloc] initWithURLString:url js:js];
     }
     return _boxesCloudVC;
 }
@@ -60,7 +62,9 @@
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-血色华夏" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _findSomeVC = [[MSBaseWebViewController alloc] initWithURLString:url];
+        url = @"https://bgwp.oschina.io/baye/choose.html";
+        NSString *js = [NSString stringWithFormat:@"chooseLib('群魔乱舞-血色华夏', 'libs/qmlw-XSHX.lib', this)"];
+        _findSomeVC = [[HDWKWebViewViewController alloc] initWithURLString:url js:js];
     }
     return _findSomeVC;
 }
@@ -71,7 +75,9 @@
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-三国杀" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _settingVC = [[MSBaseWebViewController alloc] initWithURLString:url];
+        url = @"https://bgwp.oschina.io/baye/choose.html";
+        NSString *js = [NSString stringWithFormat:@"chooseLib('群魔乱舞-三国杀', 'libs/qmlw-SGS211.lib', this)"];
+        _settingVC = [[HDWKWebViewViewController alloc] initWithURLString:url js:js];
     }
     return _settingVC;
 }

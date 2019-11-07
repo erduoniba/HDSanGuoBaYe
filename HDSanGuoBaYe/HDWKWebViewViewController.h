@@ -16,4 +16,6 @@
 
 - (instancetype)initWithURLString:(NSString *)urlString;
 
+- (instancetype)initWithURLString:(NSString *)urlString js:(NSString *)js;
+
 @end

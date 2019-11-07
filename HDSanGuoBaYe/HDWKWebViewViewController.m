@@ -10,21 +10,27 @@
 #import "RootViewController.h"
 
 #import <WebKit/WebKit.h>
-#import "AppDelegate.h"
+#import <SCCatWaitingHUD/SCCatWaitingHUD.h>
 
-@interface HDWKWebViewViewController () <WKUIDelegate, WKNavigationDelegate>
+@interface HDWKWebViewViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) NSString *js;
 
 @end
 
 @implementation HDWKWebViewViewController
 
 - (instancetype)initWithURLString:(NSString *)urlString {
+    return [self initWithURLString:urlString js:@""];
+}
+
+- (instancetype)initWithURLString:(NSString *)urlString js:(NSString *)js {
     self = [super init];
     if (self) {
         _urlString = urlString;
+        _js = js;
     }
     return self;
 }
@@ -53,8 +59,12 @@
     //设置请求的User-Agent信息中应用程序名称 iOS9后可用
     config.applicationNameForUserAgent = @"ios";
     
+    config.userContentController = [[WKUserContentController alloc] init];
+    //在创建wkWebView时，需要将被js调用的方法注册进去,oc与js端对应实现
+    [config.userContentController addScriptMessageHandler:self name:@"callFunciton"];
+    
     //初始化
-    _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
+    _wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
     // UI代理
     _wkWebView.UIDelegate = self;
     // 导航代理
@@ -65,6 +75,10 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:_urlString]];
     [_wkWebView loadRequest:request];
     [self.view addSubview:_wkWebView];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[SCCatWaitingHUD sharedInstance] animateWithInteractionEnabled:YES];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,6 +95,7 @@
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     NSLog(@"didFailProvisionalNavigation");
+    [[SCCatWaitingHUD sharedInstance] stop];
 }
 
 // 当内容开始返回时调用
@@ -90,13 +105,22 @@
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"didFinishNavigation");
+    NSLog(@"didFinishNavigation : %@", webView.URL.absoluteString);
+    
+    NSString *urlStr = webView.URL.absoluteString;
+    if ([urlStr isEqualToString:@"https://bgwp.oschina.io/baye/choose.html"] &&  _js.length > 0) {
+        [_wkWebView evaluateJavaScript:_js completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
+            
+        }];
+    }
 }
 
 //提交发生错误时调用
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     NSLog(@"didFailNavigation");
+    [[SCCatWaitingHUD sharedInstance] stop];
 }
+
 // 接收到服务器跳转请求即服务重定向时之后调用
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
     NSLog(@"didReceiveServerRedirectForProvisionalNavigation");
@@ -115,47 +139,67 @@
     
     //自己定义的协议头
     NSString *htmlHeadString = @"https://bgwp.oschina.io/baye/index.html";
+    NSString *gameHtml = @"https://bgwp.oschina.io/baye/m.html?name=";
     if([urlStr hasPrefix:htmlHeadString]){
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"卸甲归田" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:([UIAlertAction actionWithTitle:@"我再想想" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController addAction:([UIAlertAction actionWithTitle:@"重头再来" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [webView reload];
         }])];
-        [alertController addAction:([UIAlertAction actionWithTitle:@"想好了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alertController addAction:([UIAlertAction actionWithTitle:@"卸甲归田" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self exitApplication];
         }])];
-//        [self presentViewController:alertController animated:YES completion:nil];
-        decisionHandler(WKNavigationActionPolicyAllow);
+        [self presentViewController:alertController animated:YES completion:nil];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
     }
-    else{
+    else if ([urlStr hasPrefix:gameHtml]) {
+        // 开始游戏，需要修正frame
+        self.wkWebView.frame = self.view.bounds;
         decisionHandler(WKNavigationActionPolicyAllow);
+        return;
     }
+    
+    decisionHandler(WKNavigationActionPolicyCancel);
 }
 
 // 根据客户端受到的服务器响应头以及response相关信息来决定是否可以跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     NSString * urlStr = navigationResponse.response.URL.absoluteString;
     NSLog(@"当前跳转地址：%@",urlStr);
+    NSString *gameHtml = @"https://bgwp.oschina.io/baye/m.html?name=";
     if ([urlStr isEqualToString:_urlString]) {
          decisionHandler(WKNavigationResponsePolicyAllow);
          return;
      }
+    else if ([urlStr hasPrefix:gameHtml]) {
+        // 开始游戏，需要修正frame
+        self.wkWebView.frame = self.view.bounds;
+        decisionHandler(WKNavigationResponsePolicyAllow);
+        [[SCCatWaitingHUD sharedInstance] stop];
+        return;
+    }
     //允许跳转
     //decisionHandler(WKNavigationResponsePolicyAllow);
     //不允许跳转
-    decisionHandler(WKNavigationResponsePolicyAllow);
+    decisionHandler(WKNavigationResponsePolicyCancel);
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
 }
 
 //需要响应身份验证时调用 同样在block中需要传入用户身份凭证
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
     //用户身份信息
-    NSURLCredential * newCred = [[NSURLCredential alloc] initWithUser:@"user123" password:@"123" persistence:NSURLCredentialPersistenceNone];
-    //为 challenge 的发送方提供 credential
-    [challenge.sender useCredential:newCred forAuthenticationChallenge:challenge];
-    completionHandler(NSURLSessionAuthChallengeUseCredential,newCred);
+//    NSURLCredential * newCred = [[NSURLCredential alloc] initWithUser:@"user123" password:@"123" persistence:NSURLCredentialPersistenceNone];
+//    //为 challenge 的发送方提供 credential
+//    [challenge.sender useCredential:newCred forAuthenticationChallenge:challenge];
+    completionHandler(NSURLSessionAuthChallengeUseCredential, nil);
 }
 
 //进程被终止时调用
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
+    
 }
 
 #pragma mark - WKUIDelegate
