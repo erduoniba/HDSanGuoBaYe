@@ -52,9 +52,15 @@
             return YES;
         }
         if ([request.URL.absoluteString isEqualToString:@"https://bgwp.oschina.io/baye/index.html"]) {
-//            if (self.weakVC) {
-//                [self.weakVC showPenroseView];
-//            }
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"卸甲归田" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:([UIAlertAction actionWithTitle:@"我再想想" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self.webView reload];
+            }])];
+            [alertController addAction:([UIAlertAction actionWithTitle:@"想好了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self exitApplication];
+            }])];
+            [self presentViewController:alertController animated:YES completion:nil];
+            return NO;
         }
         return NO;
     };
@@ -64,14 +70,16 @@
     NSLog(@"webViewDidStartLoad");
 
     if(![SCCatWaitingHUD sharedInstance].isAnimating) {
-        [[SCCatWaitingHUD sharedInstance] animateWithInteractionEnabled:NO];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[SCCatWaitingHUD sharedInstance] animateWithInteractionEnabled:YES];
+        });
     }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"webViewDidFinishLoad");
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [[SCCatWaitingHUD sharedInstance] stop];
     });
 }
@@ -109,5 +117,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+- (void)exitApplication {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;;
+    [UIView animateWithDuration:1.0f animations:^{
+        window.alpha = 0;
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
+}
 
 @end

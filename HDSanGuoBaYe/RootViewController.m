@@ -9,15 +9,15 @@
 #import "RootViewController.h"
 
 #import "HDWKWebViewViewController.h"
-#import "HDWKWebViewViewController.h"
+#import "MSBaseWebViewController.h"
 
 #import <HDBaseProject/HDBaseProject.h>
 
 @interface RootViewController ()
 
-@property (nonatomic, strong) HDWKWebViewViewController  *boxesCloudVC;
-@property (nonatomic, strong) HDWKWebViewViewController  *findSomeVC;
-@property (nonatomic, strong) HDWKWebViewViewController  *settingVC;
+@property (nonatomic, strong) UIViewController  *boxesCloudVC;
+@property (nonatomic, strong) UIViewController  *findSomeVC;
+@property (nonatomic, strong) UIViewController  *settingVC;
 
 @end
 
@@ -43,35 +43,35 @@
 
 
 #pragma mark - 成员变量延迟实例化
-- (HDWKWebViewViewController *)boxesCloudVC{
+- (UIViewController *)boxesCloudVC{
     if (!_boxesCloudVC) {
+        [self cleanCacheAndCookie];
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-乱战三国" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _boxesCloudVC = [[HDWKWebViewViewController alloc] initWithURLString:url];
-        _boxesCloudVC.weakVC = self;
+        _boxesCloudVC = [[MSBaseWebViewController alloc] initWithURLString:url];
     }
     return _boxesCloudVC;
 }
 
-- (HDWKWebViewViewController *)findSomeVC{
+- (UIViewController *)findSomeVC{
     if (!_findSomeVC) {
+        [self cleanCacheAndCookie];
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-血色华夏" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _findSomeVC = [[HDWKWebViewViewController alloc] initWithURLString:url];
-        _findSomeVC.weakVC = self;
+        _findSomeVC = [[MSBaseWebViewController alloc] initWithURLString:url];
     }
     return _findSomeVC;
 }
 
-- (HDWKWebViewViewController *)settingVC{
+- (UIViewController *)settingVC{
     if (!_settingVC) {
+        [self cleanCacheAndCookie];
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         NSString *name = [@"群魔乱舞-三国杀" hd_utf8Encode];
         NSString *url = [NSString stringWithFormat:@"https://bgwp.oschina.io/baye/m.html?name=%@#%0.3f", name, now];
-        _settingVC = [[HDWKWebViewViewController alloc] initWithURLString:url];
-        _settingVC.weakVC = self;
+        _settingVC = [[MSBaseWebViewController alloc] initWithURLString:url];
     }
     return _settingVC;
 }
@@ -112,7 +112,21 @@
 }
 
 
-
+/**清除缓存和cookie*/
+- (void)cleanCacheAndCookie {
+    //清除cookies
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies]){
+        [storage deleteCookie:cookie];
+    }
+   //清除UIWebView的缓存
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    NSURLCache * cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    [cache setDiskCapacity:0];
+    [cache setMemoryCapacity:0];
+}
 
 
 - (void)didReceiveMemoryWarning {

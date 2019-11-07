@@ -62,7 +62,7 @@
     // 是否允许手势左滑返回上一级, 类似导航控制的左滑返回
     _wkWebView.allowsBackForwardNavigationGestures = YES;
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:_urlString]];
     [_wkWebView loadRequest:request];
     [self.view addSubview:_wkWebView];
 }
@@ -107,6 +107,12 @@
     
     NSString * urlStr = navigationAction.request.URL.absoluteString;
     NSLog(@"发送跳转请求：%@",urlStr);
+    
+    if ([urlStr isEqualToString:_urlString]) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
+    }
+    
     //自己定义的协议头
     NSString *htmlHeadString = @"https://bgwp.oschina.io/baye/index.html";
     if([urlStr hasPrefix:htmlHeadString]){
@@ -117,8 +123,8 @@
         [alertController addAction:([UIAlertAction actionWithTitle:@"想好了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self exitApplication];
         }])];
-        [self presentViewController:alertController animated:YES completion:nil];
-        decisionHandler(WKNavigationActionPolicyCancel);
+//        [self presentViewController:alertController animated:YES completion:nil];
+        decisionHandler(WKNavigationActionPolicyAllow);
     }
     else{
         decisionHandler(WKNavigationActionPolicyAllow);
@@ -129,10 +135,14 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     NSString * urlStr = navigationResponse.response.URL.absoluteString;
     NSLog(@"当前跳转地址：%@",urlStr);
+    if ([urlStr isEqualToString:_urlString]) {
+         decisionHandler(WKNavigationResponsePolicyAllow);
+         return;
+     }
     //允许跳转
-    decisionHandler(WKNavigationResponsePolicyAllow);
+    //decisionHandler(WKNavigationResponsePolicyAllow);
     //不允许跳转
-    //decisionHandler(WKNavigationResponsePolicyCancel);
+    decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
 //需要响应身份验证时调用 同样在block中需要传入用户身份凭证
