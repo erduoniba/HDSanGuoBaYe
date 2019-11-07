@@ -6,4 +6,5 @@ platform:ios, '8.0'
 
 target 'HDSanGuoBaYe' do
     pod 'HDBaseProject', :git => 'https://github.com/erduoniba/HDBaseProject.git'
+    pod 'SCCatWaitingHUD', '~> 0.1.6'
 end

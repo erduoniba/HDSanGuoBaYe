@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED5696CED9E47ADBFBCCE74EC55632AA"
-               BuildableName = "Pods_HDSanGuoBaYe.framework"
-               BlueprintName = "Pods-HDSanGuoBaYe"
+               BlueprintIdentifier = "80F804D847A84486A91822CBF5E8F42E"
+               BuildableName = "SCCatWaitingHUD.bundle"
+               BlueprintName = "SCCatWaitingHUD-SCCatWaitingHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

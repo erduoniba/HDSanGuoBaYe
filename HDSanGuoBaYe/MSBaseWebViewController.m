@@ -10,6 +10,8 @@
 
 #import "RootViewController.h"
 
+#import <SCCatWaitingHUD/SCCatWaitingHUD.h>
+
 @implementation MSBaseWebViewController {
     NSString *_fileName;
 }
@@ -41,6 +43,7 @@
     self.webView.scrollView.scrollEnabled = NO;
     self.navigationButtonsHidden = YES;
     
+    
     @weakify(self)
     self.shouldStartLoadRequestHandler = ^BOOL(NSURLRequest *request, UIWebViewNavigationType navigationType) {
         NSLog(@"request.URL.absoluteURL : %@", request.URL.absoluteString);
@@ -59,11 +62,18 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"webViewDidStartLoad");
-//    [self.view tos]
+
+    if(![SCCatWaitingHUD sharedInstance].isAnimating) {
+        [[SCCatWaitingHUD sharedInstance] animateWithInteractionEnabled:NO];
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"webViewDidFinishLoad");
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[SCCatWaitingHUD sharedInstance] stop];
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
