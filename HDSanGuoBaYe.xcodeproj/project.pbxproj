@@ -397,8 +397,8 @@
 			baseConfigurationReference = F67228254C9F36C3F872AE0A /* Pods-HDSanGuoBaYe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ353LFGTA;
 				INFOPLIST_FILE = HDSanGuoBaYe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,7 +408,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = denglibingWildcardID;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
