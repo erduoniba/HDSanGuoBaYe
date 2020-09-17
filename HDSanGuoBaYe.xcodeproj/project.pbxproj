@@ -11,7 +11,6 @@
 		AD2173C92371451A00848867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2173C82371451A00848867 /* Assets.xcassets */; };
 		AD2173CC2371451A00848867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2173CA2371451A00848867 /* LaunchScreen.storyboard */; };
 		AD2173CF2371451A00848867 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2173CE2371451A00848867 /* main.m */; };
-		ADBE9F0F2372B7D10010C60F /* MSBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */; };
 		ADBE9F182372C34D0010C60F /* RSPenroseView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F132372C34D0010C60F /* RSPenroseView.m */; };
 		ADBE9F192372C34D0010C60F /* RSPenroseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F152372C34D0010C60F /* RSPenroseViewController.m */; };
 		ADBE9F1A2372C34D0010C60F /* UIViewController+RSPenrose.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE9F172372C34D0010C60F /* UIViewController+RSPenrose.m */; };
@@ -29,8 +28,6 @@
 		AD2173CB2371451A00848867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD2173CD2371451A00848867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2173CE2371451A00848867 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ADBE9F0D2372B7D10010C60F /* MSBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseWebViewController.h; sourceTree = "<group>"; };
-		ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseWebViewController.m; sourceTree = "<group>"; };
 		ADBE9F122372C34D0010C60F /* UIViewController+RSPenrose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RSPenrose.h"; sourceTree = "<group>"; };
 		ADBE9F132372C34D0010C60F /* RSPenroseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPenroseView.m; sourceTree = "<group>"; };
 		ADBE9F142372C34D0010C60F /* RSPenroseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPenroseViewController.h; sourceTree = "<group>"; };
@@ -92,8 +89,6 @@
 				ADBE9F1C2372C3690010C60F /* RootViewController.m */,
 				D924C8452373122600015213 /* HDWKWebViewViewController.h */,
 				D924C8462373122600015213 /* HDWKWebViewViewController.m */,
-				ADBE9F0D2372B7D10010C60F /* MSBaseWebViewController.h */,
-				ADBE9F0E2372B7D10010C60F /* MSBaseWebViewController.m */,
 				AD2173C82371451A00848867 /* Assets.xcassets */,
 				AD2173CA2371451A00848867 /* LaunchScreen.storyboard */,
 				AD2173CD2371451A00848867 /* Info.plist */,
@@ -206,7 +201,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/HDBaseProject/HDBaseProject.framework",
@@ -227,7 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HDSanGuoBaYe/Pods-HDSanGuoBaYe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB36DE5205AE35FDB260D9EA /* [CP] Check Pods Manifest.lock */ = {
@@ -257,7 +252,6 @@
 			files = (
 				ADBE9F192372C34D0010C60F /* RSPenroseViewController.m in Sources */,
 				ADBE9F1D2372C3690010C60F /* RootViewController.m in Sources */,
-				ADBE9F0F2372B7D10010C60F /* MSBaseWebViewController.m in Sources */,
 				ADBE9F1A2372C34D0010C60F /* UIViewController+RSPenrose.m in Sources */,
 				D924C8472373122600015213 /* HDWKWebViewViewController.m in Sources */,
 				AD2173CF2371451A00848867 /* main.m in Sources */,
@@ -399,13 +393,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2020090801;
 				DEVELOPMENT_TEAM = HQ353LFGTA;
 				INFOPLIST_FILE = HDSanGuoBaYe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -420,13 +416,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2020090801;
 				DEVELOPMENT_TEAM = HQ353LFGTA;
 				INFOPLIST_FILE = HDSanGuoBaYe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.sanguobaye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = hdsanguobaye_appstore;

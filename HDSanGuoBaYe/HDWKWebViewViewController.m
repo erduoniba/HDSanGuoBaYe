@@ -53,7 +53,7 @@
     // 是使用h5的视频播放器在线播放, 还是使用原生播放器全屏播放
     config.allowsInlineMediaPlayback = YES;
     //设置视频是否需要用户手动播放  设置为NO则会允许自动播放
-    config.requiresUserActionForMediaPlayback = YES;
+    config.mediaTypesRequiringUserActionForPlayback = YES;
     //设置是否允许画中画技术 在特定设备上有效
     config.allowsPictureInPictureMediaPlayback = YES;
     //设置请求的User-Agent信息中应用程序名称 iOS9后可用
@@ -114,6 +114,8 @@
         [_wkWebView evaluateJavaScript:_js completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
             
         }];
+        
+        
     }
     else if ([urlStr hasPrefix:gameHtml]) {
         // 开始游戏，需要修正alpha

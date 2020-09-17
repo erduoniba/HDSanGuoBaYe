@@ -18,9 +18,9 @@
 #import "HDBaseRepositoryProtcol.h"
 #import "HDBaseUITableViewCell.h"
 #import "HDBaseUITableViewController.h"
-#import "HDBaseUIWebViewController.h"
 #import "HDBaseViewController.h"
 #import "HDBaseViewControllers.h"
+#import "HDBaseWebViewController.h"
 #import "HDReminderView.h"
 #import "HDTableViewConverter.h"
 #import "HDCategorys.h"
@@ -53,10 +53,9 @@
 #import "HDNetworking.h"
 #import "HDRequestConvertManager.h"
 #import "HDRequestManagerConfig.h"
-#import "TOActivityChrome.h"
-#import "TOActivitySafari.h"
-#import "TOWebViewController.h"
-#import "UIImage+TOWebViewControllerIcons.h"
+#import "DZNPolyActivity.h"
+#import "DZNWebView.h"
+#import "DZNWebViewController.h"
 
 FOUNDATION_EXPORT double HDBaseProjectVersionNumber;
 FOUNDATION_EXPORT const unsigned char HDBaseProjectVersionString[];

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 #import "RootViewController.h"
-#import "MSBaseWebViewController.h"
 #import <HDBaseProject/HDBaseProject.h>
 
 @interface AppDelegate ()
