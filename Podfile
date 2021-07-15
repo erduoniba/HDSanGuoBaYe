@@ -1,3 +1,6 @@
+require 'xcodeproj'
+project 'HDSanGuoBaYe.xcodeproj'
+
 source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings!
 use_frameworks!
@@ -8,3 +11,5 @@ target 'HDSanGuoBaYe' do
     pod 'HDBaseProject', :git => 'https://github.com/erduoniba/HDBaseProject.git'
     pod 'SCCatWaitingHUD', '~> 0.1.6'
 end
+
+

@@ -1801,13 +1801,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				4F4393182CEC171C928000A3796F7EE5 /* PBXTargetDependency */,
 				B47643D3D3AE76BBFB2F775E7B310010 /* PBXTargetDependency */,
 				6BDCC131F11CFBA8819E18C9F2F6F291 /* PBXTargetDependency */,
 				6D39C1247B6A51B9D573FF523DC62A88 /* PBXTargetDependency */,
 				A350004600472A1BC095386E697A8270 /* PBXTargetDependency */,
 				9BD53660199F3E43B0A3C007A0D58769 /* PBXTargetDependency */,
 				A2B9EED3A037CBDB6A0D085DF60E2DBC /* PBXTargetDependency */,
-				4F4393182CEC171C928000A3796F7EE5 /* PBXTargetDependency */,
 			);
 			name = "Pods-HDSanGuoBaYe";
 			productName = "Pods-HDSanGuoBaYe";
